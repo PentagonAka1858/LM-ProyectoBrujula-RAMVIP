@@ -1,0 +1,363 @@
+/* Variables */
+:root{
+    --rosa: #f8bbd0;
+    --rosa2: #f0bdc4;
+    --verde: #0d7901;
+    --verdeClaro: #c9ffc43e;
+    --verdeOscuro: #015000;
+    --negro: #012140;
+}
+
+/* Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #1d3c21;
+    background-color: var(--verdeClaro);
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+h1, h2, h3 {
+    font-weight: bold;
+    color: #880e4f; /* Rosa oscuro */
+}
+
+a {
+    text-decoration: none;
+    color: #ec407a; /* Rosa medio */
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #d81b60; /* Rosa vibrante */
+}
+
+img.logoPrincipal{
+    width: 15%;
+    height: 10%;
+}
+
+img.logo {
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+}
+
+div > .imagenPrincipal {
+    width: inherit;
+    height: inherit;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes popIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Layout */
+header {
+    background-color: var(--verde); /* Verde */
+    color: white;
+    text-align: center;
+    padding: 1.5em 0;
+    animation: fadeIn 1s ease-out;
+}
+
+main {
+    padding: 2rem 1rem;
+    display: grid;
+    gap: 2rem;
+}
+
+/* Secciones */
+.inicio {
+    height: 75vh;
+    width: 75vw;
+    margin: auto;
+    justify-content: center;
+    text-align: center;
+    background-color: #fce4ec; /* Rosa claro */
+    /* FONDO IMAGEN */
+    background-image: url("../image/imagenPrincipal.jpeg");
+    background-position: center;
+    background-size:cover;
+    /* FIN FONDO IMAGEN */
+    border-radius: 12px;
+    margin-bottom: 2rem;
+    justify-content: center;
+    animation: fadeIn 1s ease-out;
+}
+
+.ramas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    animation: fadeIn 1.2s ease-out;
+}
+
+.informacion.circulo {
+    background-color: #ffffff;
+    border: 2px solid #ec407a;
+    border-radius: 50%;
+    padding: 1.5rem;
+    text-align: center;
+    width: 150px;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.informacion.circulo:hover {
+    transform: scale(1.1);
+    background-color: #f8bbd0; /* Rosa pálido */
+}
+
+.equipo {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    padding: 1rem;
+}
+
+/* Estilo base de cada integrante */
+.integrante {
+    position: relative;
+    background-color: white;
+    overflow: hidden;
+    width: 250px; /* Tamaño inicial */
+    height: 250px;
+    border-radius: 50%;
+    transition: width 0.3s ease-in-out;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 2rem;
+}
+
+/* Imagen de cada integrante */
+.integrante img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+/* Contenedor del texto */
+.texto {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    height: 100%;
+    width: 0;
+    background-color: #ffffff;
+    color: #880e4f;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Títulos dentro del texto */
+.texto h1 {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+.texto h2 {
+    margin: 0.5rem 0 0;
+    font-size: 1rem;
+    color: #ec407a;
+}
+
+/* Hover para mostrar el texto */
+.integrante:hover {
+    width: 650px; /* Se expande el contenedor */
+}
+
+.integrante:hover .texto {
+    width: calc(100% - 350px); /* Espacio que ocupa el texto */
+    opacity: 1;
+    left: 400px;
+}
+
+.quehacemos, .aulaburbujas, .experiencias {
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+    animation: fadeIn 1.7s ease-out;
+}
+
+.circulo {
+    background-color: #fce4ec; /* Rosa claro */
+    border-radius: 12px;
+    padding: 1rem;
+    margin: 1rem 0;
+    animation: fadeIn 1.9s ease-out;
+}
+
+.colabList > h1{
+    display:flex;
+    justify-content: center;
+    margin: 15px;
+}
+
+.colaboradores {
+    display:flex;
+    justify-content: space-around;
+    
+}
+
+.colaborador {
+    background-color: #ffffff;
+    border: 2px solid #ec407a;
+    border-radius: 50%;
+    padding: 1.5rem;
+    flex-direction: column;
+    text-align:center;
+    width: 150px;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    overflow: hidden; /* para que no se salgan del circulito */
+}
+
+.colaborador img {
+    width: 100%; 
+    height: auto; 
+    border-radius: 50%;  
+}
+
+
+.ubicacion {
+    text-align: center;
+    animation: fadeIn 2s ease-out;
+}
+
+.preguntasfrecuentes .pregunta {
+    background-color: #f9f9f9;
+    margin: 1rem 0;
+    padding: 1rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.preguntasfrecuentes .pregunta:hover {
+    transform: scale(1.05);
+    background-color: #f8bbd0; /* Rosa pálido */
+}
+
+/* CONTENIDO PREGUNTAS FRECUENTES */
+summary{
+    display: flex;
+    justify-content: center;
+}
+
+summary:after {
+    content: "+";
+    text-align: center;
+}
+
+details[open] summary:after {
+    content: "-";
+}
+
+/* Footer */
+footer {
+    background-color: var(--verdeOscuro); /* Verde */
+    color: white;
+    padding: 2rem 1rem;
+    text-align: center;
+    display: grid;
+    gap: 1rem;
+    animation: fadeIn 2.5s ease-out;
+}
+
+footer .contacto a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0.5rem 0;
+    animation: popIn 2.7s ease-out;
+}
+
+footer .logoEquipo{
+    height: 20vh ;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .ramas {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #informacion.circulo {
+        width: 120px;
+        height: 120px;
+        font-size: 0.9rem;
+    }
+
+    footer .contacto a {
+        flex-direction: column;
+    }
+
+
+    .integrante {
+        width: 100%;
+        height: 200px;
+        border-radius: 12px;
+    }
+
+    .integrante img {
+        border-radius: 12px 0 0 12px;
+    }
+
+    .integrante:hover {
+        width: 100%;
+    }
+
+    .integrante:hover .texto {
+        left: 200px;
+    }
+}
