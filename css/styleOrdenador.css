@@ -6,6 +6,8 @@
     --verdeClaro: #c9ffc43e;
     --verdeOscuro: #015000;
     --negro: #012140;
+    --verdefooter: #4a7f60;
+    --rositabebe:#fab6d7;
 }
 
 /* Base */
@@ -100,11 +102,11 @@ main {
     height: 75vh;
     width: 75vw;
     margin: auto;
+    display: flex;
     justify-content: center;
     text-align: center;
-    background-color: #fce4ec; /* Rosa claro */
     /* FONDO IMAGEN */
-    background-image: url("../image/imagenPrincipal.jpeg");
+    background-image: url("../image/imagenPrincipal.png");
     background-position: center;
     background-size:cover;
     /* FIN FONDO IMAGEN */
@@ -112,6 +114,34 @@ main {
     margin-bottom: 2rem;
     justify-content: center;
     animation: fadeIn 1s ease-out;
+}
+
+.textoPrincipal {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    margin:auto;
+    background-color: #ffc4f5ad;
+    color: var(--verdeOscuro);
+    border: 3px solid #f1f1f15d;
+    width: 80%;
+    padding: 20px;
+    font-size: 1.2em;
+    font-style: italic;
+    border-radius: 12px;
+}
+
+.textoPrincipal > p { /* TEXTO INICIO */
+    margin: 0% 10% 0 10%;
+    font-weight: bold;
+    text-shadow: 0px 0px 2px var(--verdeOscuro);
+}
+
+.textoPrincipal > p + p { /* TEXTO DE FIRMADO POR... */
+    color: var(--verde);
+    margin: 2% 10% 0 10%;
+    text-decoration:underline var(--verde) wavy 2px;
 }
 
 .ramas {
@@ -125,7 +155,7 @@ main {
 
 .informacion.circulo {
     background-color: #ffffff;
-    border: 2px solid #ec407a;
+    border: 2px solid var(--verde);
     border-radius: 50%;
     padding: 1.5rem;
     text-align: center;
@@ -140,7 +170,7 @@ main {
 
 .informacion.circulo:hover {
     transform: scale(1.1);
-    background-color: #f8bbd0; /* Rosa pálido */
+    background-color:#ffc4f5ab; /* Rosa pálido */
 }
 
 .equipo {
@@ -280,11 +310,18 @@ main {
     border-radius: 12px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
+    h1{
+        font-size: 1.4em;
+    }
+}
+
+.pregunta p {
+    color: var(--verdeOscuro);
 }
 
 .preguntasfrecuentes .pregunta:hover {
     transform: scale(1.05);
-    background-color: #f8bbd0; /* Rosa pálido */
+    background-color:#fcbcdb; /* Rosa pálido */
 }
 
 /* CONTENIDO PREGUNTAS FRECUENTES */
@@ -293,36 +330,115 @@ summary{
     justify-content: center;
 }
 
-summary:after {
-    content: "+";
+summary:before {
+    color: var(--verdeOscuro);
+    margin-right: 1%;
+    margin-bottom: -15px;
+    font-size: 1.3em;
+    content: "⮶";
+    display: flex;
     text-align: center;
+    align-items: center;
 }
 
-details[open] summary:after {
-    content: "-";
+details[open] summary:before {
+    font-size: 1.3em;
+    content: "⮳";
 }
 
 /* Footer */
 footer {
-    background-color: var(--verdeOscuro); /* Verde */
-    color: white;
+    background-color: var(--verdefooter); /* Verde */
+    color:white;
     padding: 2rem 1rem;
     text-align: center;
     display: grid;
     gap: 1rem;
-    animation: fadeIn 2.5s ease-out;
+    animation: fadeIn 2.5s ease-out ;
 }
 
 footer .contacto a {
-    display: flex;
+    text-align:center;
+    width: 150px;
+    height: 150px;
     align-items: center;
     justify-content: center;
-    margin: 0.5rem 0;
-    animation: popIn 2.7s ease-out;
+    font-size: 1rem;
+}
+footer .informacion{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+footer .infoUbicacion{
+    text-justify: center;
 }
 
 footer .logoEquipo{
     height: 20vh ;
+}
+
+footer .contacto .logoInstagram {
+    width: 55px;
+    height: 45px;
+    transition: transform 0.3s ease;
+}
+
+footer .contacto .logoInstagram:hover {
+    transform: scale(1.1);
+}
+
+footer .contacto .logoYoutube {
+    width: 55px;
+    height: 45px;
+    transition: transform 0.3s ease;
+}
+
+footer .contacto .logoYoutube:hover {
+    transform: scale(1.1);
+}
+
+footer .contacto .logoFacebook {
+    width: 50px;
+    height: 40px;
+    margin-bottom: 3px;
+    transition: transform 0.3s ease;
+}
+
+footer .contacto .logoFacebook:hover {
+    transform: scale(1.1);
+}
+
+.horarios {
+    background: linear-gradient(135deg, #4CAF50, #2E7D32);
+    color: #ffffff;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0px 8px 12px rgba(0,0,0,0.2);
+    max-width: 350px;
+    font-family: 'Arial', sans-serif;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.horarios:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 12px 20px rgba(0,0,0,0.3);
+}
+
+.horarios h1 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ff4081;
+    margin-bottom: 15px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.horarios p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin: 5px 0;
+    color: #ffffff;
 }
 
 /* Responsividad */
@@ -338,8 +454,20 @@ footer .logoEquipo{
         font-size: 0.9rem;
     }
 
+    footer .contacto {
+        display: flex;
+        align-items: center;
+        gap: 10px; 
+    }
+    
     footer .contacto a {
-        flex-direction: column;
+        text-decoration: none;
+        color: inherit;
+    }
+    
+    footer .contacto .logo {
+        width: 24px; 
+        height: auto;
     }
 
 
