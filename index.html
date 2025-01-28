@@ -22,43 +22,20 @@
             <!-- <img class="imagenPrincipal" src="./image/imagenPrincipal.png"> -->
         </div>
         <div class="ramas oleado">
-            <div class="informacion circulo">
+            <div class="informacion circulo" id="psicologia">
                 <p>Psicología</p>
             </div>
-            <div class="informacion circulo">
+            <div class="informacion circulo" id="audicion-lenguaje">
                 <p>Audición y lenguaje</p>
             </div>
-            <div class="informacion circulo">
+            <div class="informacion circulo" id="estimulacion-temp">
                 <p>Estimulación temprana y cognitiva</p>
             </div>
-            <div class="informacion circulo">
+            <div class="informacion circulo" id="habilidades">
                 <p>Habilidades sociales y autonomía</p>
             </div>
             <div class="informacion circulo">
                 <p>Gestión becas NEAE</p>
-            </div>
-        </div>
-        <div class="equipo">
-            <div class="integrante">
-                <img src="./image/maca.png">
-                <div class="texto">
-                    <h1>Macarena Coronil Pérez</h1>
-                    <h2>Coordinadora y presidenta</h2>
-                </div>
-            </div>
-            <div class="integrante">
-                <img src="./image/andrea.jpeg">
-                <div class="texto">
-                    <h1>Andréa González</h1>
-                    <h2>Audición y lenguaje</h2>
-                </div>
-            </div>
-            <div class="integrante">
-                <img src="./image/olga.png">
-                <div class="texto">
-                    <h1>Olga Carrero Cairón</h1>
-                    <h2>Psicóloga general sanitaria</h2>
-                </div>
             </div>
         </div>
         <div class="quehacemos">
@@ -70,6 +47,38 @@
                     fundamentales son la inclusión, la solidaridad, la igualdad, los derechos humanos y el acceso a la salud mental.</p><br>
                 <p>La asociación destaca la importancia de sensibilizar, especialmente a la población infantojuvenil, para construir una comunidad 
                     sólida que valore a cada persona. Esto facilita el empoderamiento y la participación activa en proyectos personales, promoviendo la autonomía individual.</p>
+            </div>
+        </div>
+        <div class="team">
+            <h1>Nuestro equipo</h1>
+            <div class="equipo">
+                <div class="integrante">
+                    <div class="imagen">
+                        <img src="./image/Macarena.png" alt="Macarena Coronil Pérez" id="macarena">
+                    </div>
+                    <div class="info">
+                        <h1>Macarena Coronil Pérez</h1>
+                        <h2>Coordinadora y presidenta</h2>
+                    </div>
+                </div>
+                <div class="integrante">
+                    <div class="imagen">
+                        <img src="./image/Andrea.png" alt="Andrea González">
+                    </div>
+                    <div class="info">
+                        <h1>Andrea González</h1>
+                        <h2>Audición y lenguaje</h2>
+                    </div>
+                </div>
+                <div class="integrante">
+                    <div class="imagen">
+                        <img src="./image/Olga.png" alt="Olga Carrero Cairón" id="olga">
+                    </div>
+                    <div class="info">
+                        <h1>Olga Carrero Cairón</h1>
+                        <h2>Psicóloga general sanitaria</h2>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="aulaburbujas">
@@ -111,25 +120,25 @@
             </div>
         </div> 
         <div class ="experiencias">
-                <h3>Siempre estamos buscando nuevas ideas,cursos y experiencias frescas para poder ofrecerte cada vez mejores servicios. Algunas de estas esperiencias inmemoriables han sido</h3>
-                <ol>
-                    <p>1º Encuentro por el día mundial  del autismo</p>
-                    <p>Talleres para familias</p>
-                    <p>Ponencia "En la era digital luchemos por la igualdad"</p>
-                    <p>Talleres de sensibilización. Ciberviolencia de género a través de las redes sociales</p>
-                    <p>Cursos para el profesorado CEDEP</p>
-                </ol>
+                <!-- <h3>Siempre estamos buscando nuevas ideas,cursos y experiencias frescas para poder ofrecerte cada vez mejores servicios. Algunas de estas esperiencias inmemoriables han sido</h3> -->
+                <h3>Cursos y actividades realizadas:</h3>
+                <ul>
+                    <li>1º Encuentro por el día mundial  del autismo</li>
+                    <li>Talleres para familias</li>
+                    <li>Ponencia "En la era digital luchemos por la igualdad"</li>
+                    <li>Talleres de sensibilización. Ciberviolencia de género a través de las redes sociales</li>
+                    <li>Cursos para el profesorado CEDEP</li>
+                </ul>
         </div>
     </main>
     <footer>
         <div class="preguntasfrecuentes">
             <h1>Preguntas frecuentes</h1>
-            <!--
-            <a href=""></a> --> <!-- HACER UNA LISTA DESPLEGABLE PARA LAS PREGUNTAS -->
+            <!-- <a href=""></a> --> <!-- HACER UNA LISTA DESPLEGABLE PARA LAS PREGUNTAS -->
             <div class="pregunta" id="pregunta1">
                 <details>
                     <summary><h1>¿Trabajamos psicología adulta?</h1></summary>
-                    <p>Sí, desde Brújula Gabinete Socioeducativo trabajamos con adultos...</p>
+                    <p>Sí, desde Brújula Gabinete Socioeducativo trabajamos con adultos.</p>
                 </details>
             </div>
             <div class="pregunta" id="pregunta2">
@@ -174,9 +183,11 @@
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1746.5766254994323!2d-6.241429543778285!3d36.5966314692698!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd0dd023c168dc8f%3A0x748c3c17b5f55881!2sCentro%20BR%C3%9AJULA%20Gabinete%20Pedagog%C3%ADa%2C%20audici%C3%B3n%20y%20lenguaje%2C%20psicolog%C3%ADa%20y%20atenci%C3%B3n%20temprana!5e0!3m2!1ses!2ses!4v1737629970324!5m2!1ses!2ses" width="200" height="150" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
             <div class="infoUbicacion">
-                <p>Av. de la Libertad,11</p>
-                <p>Edificio América, 16</p> 
+                <p>Av. de la Libertad,11 Edificio América, 16</p> 
                 <p>El Puerto de Santa María, Cádiz</p>
+                <p>CIF G- 72232218</p>
+                <p>NICA: 48802</p>
+                <p>CONTÁCTE CON NOSOTRAS 672057038</p>
             </div>
             <div class="contacto">
                 <a href="https://www.instagram.com/brujulagabinete/"><img src="./image/instagram.svg" class="logoInstagram"></a>
