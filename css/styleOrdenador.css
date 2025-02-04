@@ -165,15 +165,64 @@ main {
     align-items: center;
     justify-content: center;
     font-size: 1rem;
+    position: relative;
+    overflow: hidden; /* Esto asegura que las imágenes no se salgan del círculo */
     transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.informacion.circulo::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-size: cover;
+    background-position: center;
+    opacity: 1; /* La opacidad de la imagen de fondo es alta por defecto */
+    transition: opacity 0.3s ease, filter 0.3s ease; /* Agregamos transiciones */
+    filter: blur(0); /* Imagen nítida por defecto */
+}
+
+/* Asignar la imagen de fondo a cada círculo */
+#psicologia::before {
+    background-image: url('../image/psicologia.jpg');
+}
+#audicion-lenguaje::before {
+    background-image: url('../image/lenguaje.jpg');
+}
+#estimulacion-temp::before {
+    background-image: url('../image/estimulacion.jpg');
+}
+#habilidades::before {
+    background-image: url('../image/nsquesocial.jpg');
+}
+#gestion-becas::before {
+    background-image: url('../image/beca.png');
+}
+
+/* Mostrar el texto cuando se hace hover */
+.informacion.circulo p {
+    z-index: 1;
+    margin-top: 0.5rem; /* Espacio entre la imagen y el texto */
+    color: transparent; /* El texto está oculto inicialmente */
+    transition: color 0.3s ease; /* Cambia el color del texto al pasar el cursor */
+}
+
+/* Mostrar texto cuando se hace hover */
+.informacion.circulo:hover p {
+    color: #000000; /* El color del texto cuando se pase el mouse sobre el círculo */
+}
+
+.informacion.circulo:hover::before {
+    opacity: 0.2; /* Hace la imagen de fondo más tenue cuando se pasa el mouse */
+    filter: blur(5px); /* Difumina la imagen cuando el ratón pasa por encima */
 }
 
 .informacion.circulo:hover {
     transform: scale(1.1);
-    background-color:#ffc4f5ab; /* Rosa pálido */
+    background-color: var(--rositabebe); /* El fondo se vuelve transparente para ver solo la imagen */
 }
-
-
 /*===========EQUIPO=========*/
 .team h1{
     display: flex;
@@ -254,14 +303,14 @@ main {
     transform: scale(0.8);
 }
 
-.integrante:hover .imagen img:not(#macarena) {
+.integrante:hover .imagen img:not(#macarena, #Luis) {
     translate: -160px 50px;
     transform: scale(0.7);
 }
 
-.integrante:hover .imagen img#olga {
-    transform: scale(0.65);
-    translate: -180px 10px;
+.integrante:hover .imagen img#Luis {
+    transform: scale(1.1);
+    translate: 0px 10px;
 }
 
 .integrante:hover .info {
@@ -384,6 +433,7 @@ main {
 
 
 .ubicacion {
+    padding-left: 3vw;
     text-align: center;
     animation: fadeIn 2s ease-out;
 }
@@ -437,6 +487,28 @@ details[open] summary:before {
     content: "⮳";
 }
 
+/* TRANSICION ABRIR CERRAR */
+
+details summary {
+    cursor: pointer;
+    transition: margin 0.3s ease;
+}
+
+details[open] summary {
+    margin-bottom: 10px;
+}
+
+/* TRANSICION LETRAS PREGUNTAS */
+
+details[open] summary ~ * {
+    animation: sweep .5s ease-in-out;
+}
+
+@keyframes sweep {
+    0%    {opacity: 0;}
+    100%  {opacity: 1;}
+}
+
 /* Footer */
 footer {
     background-color: var(--verdefooter); /* Verde */
@@ -446,6 +518,10 @@ footer {
     display: grid;
     gap: 1rem;
     animation: fadeIn 2.5s ease-out ;
+}
+
+footer .contacto {
+    max-width: 160px;
 }
 
 footer .contacto a {
@@ -462,6 +538,7 @@ footer .informacion{
     align-items: center;
 }
 footer .infoUbicacion{
+    padding-left: 4vw;
     text-justify: center;
 }
 
@@ -546,9 +623,10 @@ footer .contacto .logoFacebook:hover {
     }
 
     footer .contacto {
+        max-width: 110px;
         display: flex;
         align-items: center;
-        gap: 10px; 
+        gap: 10px;
     }
     
     footer .contacto a {
